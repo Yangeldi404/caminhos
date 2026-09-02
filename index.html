@@ -50,29 +50,30 @@
     </div>
   </div>
 
-  <!-- CATEGORIAS / BLOCOS DE SERVIÇO
-       ALTERE AQUI: quantidade de categorias, ícones, títulos e links.
-       Cada .category-card representa um tipo de experiência e aponta direto para o passeio correspondente.
+  <!-- CARROSSEL DE FOTOS
+       ALTERE AQUI: troque cada src="images/placeholder.svg" pela foto real correspondente.
+       Pode adicionar ou remover slides — cada <div class="carousel-slide"> é uma foto,
+       e cada <button class="carousel-dot"> é a bolinha indicadora correspondente (mesma ordem).
   -->
-  <section id="aventuras">
-    <h2 class="section-title">O que você procura?</h2>
-    <div class="categories-grid">
-      <a href="#tour-citytour" class="category-card">
-        <span class="category-icon">&#127963;</span>
-        <span>HISTÓRIA</span>
-      </a>
-      <a href="#tour-travessia" class="category-card">
-        <span class="category-icon">&#129718;</span>
-        <span>AVENTURA</span>
-      </a>
-      <a href="#tour-mangue" class="category-card">
-        <span class="category-icon">&#127807;</span>
-        <span>NATUREZA</span>
-      </a>
-      <a href="#tour-ensaio" class="category-card">
-        <span class="category-icon">&#128248;</span>
-        <span>FOTOGRAFIA</span>
-      </a>
+  <section id="galeria">
+    <h2 class="section-title">Momentos em Tiradentes</h2>
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide"><img src="images/placeholder.svg" alt="Foto 1 — Tiradentes"></div>
+        <div class="carousel-slide"><img src="images/placeholder.svg" alt="Foto 2 — Tiradentes"></div>
+        <div class="carousel-slide"><img src="images/placeholder.svg" alt="Foto 3 — Tiradentes"></div>
+        <div class="carousel-slide"><img src="images/placeholder.svg" alt="Foto 4 — Tiradentes"></div>
+        <div class="carousel-slide"><img src="images/placeholder.svg" alt="Foto 5 — Tiradentes"></div>
+      </div>
+      <button class="carousel-arrow carousel-prev" onclick="moveCarousel(-1)" aria-label="Foto anterior">&#10094;</button>
+      <button class="carousel-arrow carousel-next" onclick="moveCarousel(1)" aria-label="Próxima foto">&#10095;</button>
+      <div class="carousel-dots" id="carouselDots">
+        <button class="carousel-dot active" onclick="goToSlide(0)" aria-label="Ir para foto 1"></button>
+        <button class="carousel-dot" onclick="goToSlide(1)" aria-label="Ir para foto 2"></button>
+        <button class="carousel-dot" onclick="goToSlide(2)" aria-label="Ir para foto 3"></button>
+        <button class="carousel-dot" onclick="goToSlide(3)" aria-label="Ir para foto 4"></button>
+        <button class="carousel-dot" onclick="goToSlide(4)" aria-label="Ir para foto 5"></button>
+      </div>
     </div>
   </section>
 
@@ -136,6 +137,7 @@
             </div>
             <a href="https://caminhosdetiradentes.com.br/produto/caminhos-de-tiradentes/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
           </div>
+          <a href="tour-citytour.html" class="tour-secondary-link">Ver detalhes completos</a>
         </div>
       </div>
 
@@ -160,6 +162,7 @@
             </div>
             <a href="https://caminhosdetiradentes.com.br/produto/caminhos-iluminados/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
           </div>
+          <a href="tour-iluminados.html" class="tour-secondary-link">Ver detalhes completos</a>
         </div>
       </div>
 
@@ -184,6 +187,7 @@
             </div>
             <a href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
           </div>
+          <a href="tour-travessia.html" class="tour-secondary-link">Ver detalhes completos</a>
         </div>
       </div>
 
@@ -208,6 +212,7 @@
             </div>
             <a href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose-trilha-do-mangue/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
           </div>
+          <a href="tour-mangue.html" class="tour-secondary-link">Ver detalhes completos</a>
         </div>
       </div>
 
@@ -232,6 +237,7 @@
             </div>
             <a href="https://caminhosdetiradentes.com.br/produto/ensaio-fotografico/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
           </div>
+          <a href="tour-ensaio.html" class="tour-secondary-link">Ver detalhes completos</a>
         </div>
       </div>
 
@@ -309,234 +315,7 @@
     <h2 class="section-title">Contato</h2>
     <div class="categories-grid contato-grid">
       <div class="category-card contato-card">
-        <span c/* ============================================================
-   CAMINHOS DE TIRADENTES
-   JAVASCRIPT DA HOME
-============================================================ */
-
-
-/* ============================================================
-   HEADER — EFEITO AO ROLAR
-============================================================ */
-
-const header = document.getElementById("site-header");
-
-function updateHeader() {
-
-    if (window.scrollY > 40) {
-
-        header.classList.add("scrolled");
-
-    } else {
-
-        header.classList.remove("scrolled");
-
-    }
-
-}
-
-window.addEventListener("scroll", updateHeader);
-
-updateHeader();
-
-
-
-/* ============================================================
-   MENU MOBILE
-============================================================ */
-
-const menuToggle =
-    document.getElementById("menu-toggle");
-
-const mobileMenu =
-    document.getElementById("mobile-menu");
-
-
-menuToggle.addEventListener("click", () => {
-
-    const isOpen =
-        mobileMenu.classList.toggle("open");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
-
-});
-
-
-/*
-    Fecha o menu quando o usuário
-    clica em algum link.
-*/
-
-const mobileLinks =
-    mobileMenu.querySelectorAll("a");
-
-mobileLinks.forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-        mobileMenu.classList.remove("open");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-    });
-
-});
-
-
-
-/* ============================================================
-   NEWSLETTER
-============================================================ */
-
-const newsletterForm =
-    document.getElementById("newsletter-form");
-
-const newsletterFeedback =
-    document.getElementById("newsletter-feedback");
-
-
-if (newsletterForm) {
-
-    newsletterForm.addEventListener("submit", (event) => {
-
-        event.preventDefault();
-
-        const input =
-            newsletterForm.querySelector("input[type='email']");
-
-        if (input && input.value) {
-
-            newsletterFeedback.textContent =
-                "Obrigado por se inscrever!";
-
-            newsletterForm.reset();
-
-        }
-
-    });
-
-}
-
-
-
-/* ============================================================
-   ANO DO RODAPÉ
-============================================================ */
-
-const footerYear =
-    document.getElementById("footer-year");
-
-if (footerYear) {
-
-    footerYear.textContent =
-        new Date().getFullYear();
-
-}
-
-
-
-/* ============================================================
-   ANIMAÇÃO DE ENTRADA
-============================================================ */
-
-const animatedElements =
-    document.querySelectorAll(
-        ".tour-card, .pick-card, .benefit, .gallery-item"
-    );
-
-
-const observer =
-    new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "is-visible"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-animatedElements.forEach((element) => {
-
-    observer.observe(element);
-
-});
-
-
-
-/* ============================================================
-   FALLBACK DE IMAGENS
-============================================================ */
-
-/*
-    Enquanto você ainda não possui
-    as fotos reais do cliente, esta
-    função evita que uma imagem quebrada
-    apareça de forma estranha.
-
-    Depois, basta substituir os arquivos
-    da pasta /images.
-*/
-
-const images =
-    document.querySelectorAll("img");
-
-
-images.forEach((image) => {
-
-    image.addEventListener("error", () => {
-
-        /*
-            Não substituímos a logo por uma
-            imagem externa.
-
-            Para imagens de conteúdo,
-            usamos um fundo neutro.
-        */
-
-        if (
-            image.classList.contains("hero-image") ||
-            image.closest(".tour-image") ||
-            image.closest(".why-image") ||
-            image.closest(".gallery-item")
-        ) {
-
-            image.style.display = "none";
-
-            const parent =
-                image.parentElement;
-
-            parent.classList.add(
-                "image-placeholder"
-            );
-
-        }
-
-    });
-
-});lass="category-icon">&#128205;</span>
+        <span class="category-icon">&#128205;</span>
         <span>Rua da Câmara, 103 — Centro Histórico<br>Próximo à Câmara dos Vereadores<br>CEP: 36325-000</span>
       </div>
       <a href="mailto:caminhosdetiradentes@gmail.com" class="category-card contato-card">
