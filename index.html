@@ -4,21 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Caminhos de Tiradentes | Seu Próximo Caminho Começa Aqui</title>
+  <link rel="icon" type="image/webp" href="images/logo.webp" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- HEADER / MENU PRINCIPAL
-       ALTERE AQUI: texto do logo, itens do menu, links de navegação e a seção de destino (#id).
-       Exemplo: mude "Caminhos de Tiradentes" para o nome do seu negócio e edite os hrefs para outras páginas ou seções.
+       ALTERE AQUI: a logo, itens do menu, links de navegação e a seção de destino (#id).
+       A logo é a imagem em images/logo.webp — para trocar, basta substituir o arquivo
+       (mantendo o mesmo nome) ou trocar o "src" abaixo. O filtro que deixa a logo
+       branca está definido na classe .logo-img, no style.css.
   -->
   <header>
     <nav>
-      <div class="logo">Caminhos de <span>Tiradentes</span></div>
+      <a href="#" class="logo">
+        <img src="images/logo.webp" alt="Caminhos de Tiradentes" class="logo-img">
+      </a>
       <ul class="nav-links">
         <li><a href="#quem-somos">Quem Somos</a></li>
         <li><a href="#passeios">Passeios</a></li>
-        <li><a href="#experiencia">Monte a sua</a></li>
+        <li><a href="#experiencia">Experiências</a></li>
         <li><a href="#faq">Dúvidas</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -334,9 +339,10 @@
   </section>
 
   <!-- FOOTER / RODAPÉ
-       ALTERE AQUI: nome do site, ano, endereço, telefones e texto de direitos autorais.
+       ALTERE AQUI: a logo, nome do site, ano, endereço, telefones e texto de direitos autorais.
   -->
   <footer>
+    <img src="images/logo.webp" alt="Caminhos de Tiradentes" class="footer-logo">
     <p>Rua da Câmara, 103 — Centro Histórico, Tiradentes MG &bull; (32) 99965-8707 / (32) 99962-3958</p>
     <p>&copy; 2026 Caminhos de Tiradentes — Todos os direitos reservados</p>
   </footer>

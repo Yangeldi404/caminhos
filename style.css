@@ -49,15 +49,35 @@ nav {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   color: var(--creme);
   font-weight: 800;
   font-size: 1.3rem;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .logo span {
   color: var(--terracota);
+}
+
+/* LOGO (IMAGEM)
+   ALTERE AQUI: o tamanho da logo no cabeçalho.
+   O filtro deixa a arte (originalmente preta) branca, para aparecer bem
+   sobre o fundo verde-escuro do header. Para trocar a imagem, basta
+   substituir o arquivo images/logo.webp mantendo o mesmo nome.
+*/
+.logo-img {
+  height: 52px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s;
+}
+
+.logo-img:hover {
+  opacity: 0.85;
 }
 
 .nav-links {
@@ -630,10 +650,22 @@ section {
 footer {
   background-color: var(--preto);
   color: var(--creme);
-  padding: 2rem;
+  padding: 2.5rem 2rem 2rem;
   text-align: center;
   font-size: 0.9rem;
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+/* LOGO NO RODAPÉ
+   ALTERE AQUI: o tamanho da logo exibida no rodapé, acima do endereço.
+   Usa o mesmo filtro branco da logo do header, já que o fundo do rodapé é escuro.
+*/
+.footer-logo {
+  height: 44px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  margin-bottom: 1rem;
 }
 
 footer p {
@@ -941,5 +973,8 @@ footer p {
   }
   .tour-hero-price {
     text-align: left;
+  }
+  .logo-img {
+    height: 40px;
   }
 }
