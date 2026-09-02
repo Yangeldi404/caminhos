@@ -1,228 +1,24 @@
-/* ============================================================
-   CAMINHOS DE TIRADENTES
-   JAVASCRIPT DA HOME
-============================================================ */
+// FUNÇÃO DO BLOCO INTERATIVO "MONTE SUA EXPERIÊNCIA"
+// ALTERE AQUI: as sugestões exibidas quando o usuário clica nos botões de 1, 2 ou 3+ dias.
+// O parâmetro `days` representa o número de dias selecionado e `btn` é o botão clicado.
+// As sugestões abaixo usam os nomes reais dos passeios oferecidos pela agência.
+function updatePlan(days, btn) {
+  // Remove a classe "active" de todos os botões para resetar o visual
+  const buttons = document.querySelectorAll('.planner-btn');
+  buttons.forEach((b) => b.classList.remove('active'));
 
+  // Marca somente o botão clicado como ativo
+  btn.classList.add('active');
 
-/* ============================================================
-   HEADER — EFEITO AO ROLAR
-============================================================ */
+  // Pega o elemento em que a sugestão será exibida
+  const resultBox = document.getElementById('plannerResult');
 
-const header = document.getElementById("site-header");
-
-function updateHeader() {
-
-    if (window.scrollY > 40) {
-
-        header.classList.add("scrolled");
-
-    } else {
-
-        header.classList.remove("scrolled");
-
-    }
-
+  // Altere estas strings para mudar as recomendações do planner
+  if (days === 1) {
+    resultBox.innerHTML = '<strong>Sugestão:</strong> City Tour Caminhos de Tiradentes + City Tour Noturno Caminhos Iluminados';
+  } else if (days === 2) {
+    resultBox.innerHTML = '<strong>Sugestão:</strong> City Tour Caminhos de Tiradentes + Trilha do Mangue';
+  } else {
+    resultBox.innerHTML = '<strong>Sugestão:</strong> City Tour Caminhos de Tiradentes + Trilha da Travessia + Ensaio Fotográfico';
+  }
 }
-
-window.addEventListener("scroll", updateHeader);
-
-updateHeader();
-
-
-
-/* ============================================================
-   MENU MOBILE
-============================================================ */
-
-const menuToggle =
-    document.getElementById("menu-toggle");
-
-const mobileMenu =
-    document.getElementById("mobile-menu");
-
-
-menuToggle.addEventListener("click", () => {
-
-    const isOpen =
-        mobileMenu.classList.toggle("open");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
-
-});
-
-
-/*
-    Fecha o menu quando o usuário
-    clica em algum link.
-*/
-
-const mobileLinks =
-    mobileMenu.querySelectorAll("a");
-
-mobileLinks.forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-        mobileMenu.classList.remove("open");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-    });
-
-});
-
-
-
-/* ============================================================
-   NEWSLETTER
-============================================================ */
-
-const newsletterForm =
-    document.getElementById("newsletter-form");
-
-const newsletterFeedback =
-    document.getElementById("newsletter-feedback");
-
-
-if (newsletterForm) {
-
-    newsletterForm.addEventListener("submit", (event) => {
-
-        event.preventDefault();
-
-        const input =
-            newsletterForm.querySelector("input[type='email']");
-
-        if (input && input.value) {
-
-            newsletterFeedback.textContent =
-                "Obrigado por se inscrever!";
-
-            newsletterForm.reset();
-
-        }
-
-    });
-
-}
-
-
-
-/* ============================================================
-   ANO DO RODAPÉ
-============================================================ */
-
-const footerYear =
-    document.getElementById("footer-year");
-
-if (footerYear) {
-
-    footerYear.textContent =
-        new Date().getFullYear();
-
-}
-
-
-
-/* ============================================================
-   ANIMAÇÃO DE ENTRADA
-============================================================ */
-
-const animatedElements =
-    document.querySelectorAll(
-        ".tour-card, .pick-card, .benefit, .gallery-item"
-    );
-
-
-const observer =
-    new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "is-visible"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-animatedElements.forEach((element) => {
-
-    observer.observe(element);
-
-});
-
-
-
-/* ============================================================
-   FALLBACK DE IMAGENS
-============================================================ */
-
-/*
-    Enquanto você ainda não possui
-    as fotos reais do cliente, esta
-    função evita que uma imagem quebrada
-    apareça de forma estranha.
-
-    Depois, basta substituir os arquivos
-    da pasta /images.
-*/
-
-const images =
-    document.querySelectorAll("img");
-
-
-images.forEach((image) => {
-
-    image.addEventListener("error", () => {
-
-        /*
-            Não substituímos a logo por uma
-            imagem externa.
-
-            Para imagens de conteúdo,
-            usamos um fundo neutro.
-        */
-
-        if (
-            image.classList.contains("hero-image") ||
-            image.closest(".tour-image") ||
-            image.closest(".why-image") ||
-            image.closest(".gallery-item")
-        ) {
-
-            image.style.display = "none";
-
-            const parent =
-                image.parentElement;
-
-            parent.classList.add(
-                "image-placeholder"
-            );
-
-        }
-
-    });
-
-});

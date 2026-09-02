@@ -1,1209 +1,567 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Descubra os encantos de Tiradentes com a Caminhos de Tiradentes. Seu guia para os melhores passeios guiados em Tiradentes, MG."
-    >
-
-    <title>Caminhos de Tiradentes | Agência de Turismo em Tiradentes MG</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caminhos de Tiradentes | Seu Próximo Caminho Começa Aqui</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-    <!-- =========================================================
-         BARRA SUPERIOR
-    ========================================================== -->
+  <!-- HEADER / MENU PRINCIPAL
+       ALTERE AQUI: texto do logo, itens do menu, links de navegação e a seção de destino (#id).
+       Exemplo: mude "Caminhos de Tiradentes" para o nome do seu negócio e edite os hrefs para outras páginas ou seções.
+  -->
+  <header>
+    <nav>
+      <div class="logo">Caminhos de <span>Tiradentes</span></div>
+      <ul class="nav-links">
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#passeios">Passeios</a></li>
+        <li><a href="#experiencia">Monte a sua</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="topbar">
-
-        <div class="container topbar-inner">
-
-            <a href="https://caminhosdetiradentes.com.br/minha-conta/" class="topbar-account">
-                Entrar ou Registrar
-            </a>
-
-            <div class="topbar-social">
-
-                <a
-                    href="https://www.instagram.com/caminhosdetiradentes_citytour?igsh=ajJkcGUxYzQwbW5r&utm_source=qr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                >
-                    Instagram
-                </a>
-
-                <a
-                    href="https://wa.me/5532999658707"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="WhatsApp"
-                >
-                    WhatsApp
-                </a>
-
-            </div>
-
+  <!-- HERO / PRIMEIRA IMPRESSÃO
+       ALTERE AQUI: título principal, subtítulo, botão de ação, texto do cartão flutuante e imagem de fundo.
+       A imagem de fundo está no CSS na classe .hero; troque pela foto real quando disponível.
+       O botão do WhatsApp já aponta para o número real da agência: (32) 99965-8707.
+  -->
+  <div class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">Seu próximo caminho começa aqui.</h1>
+        <p class="hero-subtitle">Por caminhos e becos, monumentos por dentro e por fora, trilhas repletas de história! Participe dos nossos passeios e mergulhe na riqueza cultural de Tiradentes.</p>
+        <div class="hero-buttons">
+          <a href="#passeios" class="btn btn-primary">EXPLORAR PASSEIOS &rarr;</a>
+          <a href="https://wa.me/5532999658707" target="_blank" rel="noopener" class="btn btn-whatsapp">WHATSAPP &#8599;</a>
         </div>
+      </div>
+      <div class="hero-card-wrapper">
+        <div class="hero-card">
+          <div class="hero-card-rating">&#127963; Desde 2012</div>
+          <div class="hero-card-text">Guias nativos de Tiradentes: Rafaela e Rosaldo, formados pela Cadastur, com mais de 40 anos de tradição em turismo na cidade.</div>
+          <div class="hero-card-badge">Passeios diários</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIAS / BLOCOS DE SERVIÇO
+       ALTERE AQUI: quantidade de categorias, ícones, títulos e links.
+       Cada .category-card representa um tipo de experiência e aponta direto para o passeio correspondente.
+  -->
+  <section id="aventuras">
+    <h2 class="section-title">O que você procura?</h2>
+    <div class="categories-grid">
+      <a href="#tour-citytour" class="category-card">
+        <span class="category-icon">&#127963;</span>
+        <span>HISTÓRIA</span>
+      </a>
+      <a href="#tour-travessia" class="category-card">
+        <span class="category-icon">&#129718;</span>
+        <span>AVENTURA</span>
+      </a>
+      <a href="#tour-mangue" class="category-card">
+        <span class="category-icon">&#127807;</span>
+        <span>NATUREZA</span>
+      </a>
+      <a href="#tour-ensaio" class="category-card">
+        <span class="category-icon">&#128248;</span>
+        <span>FOTOGRAFIA</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS
+       ALTERE AQUI: a história da agência, nome dos guias e a foto da equipe.
+       Conteúdo baseado na página "Quem Somos" real da agência.
+  -->
+  <section id="quem-somos">
+    <h2 class="section-title">Quem Somos</h2>
+    <div class="about-grid">
+      <!-- TROQUE AQUI PELA FOTO REAL DA EQUIPE -->
+      <div class="about-image" style="background-image: url('images/nos.webp');"></div>
+      <div class="about-content">
+        <p>Em 2012, a guia Rafaela deu os primeiros passos como guia de turismo em sua cidade natal, Tiradentes, ao lado do pai, Rosaldo — guia de turismo experiente há mais de 40 anos. Juntos fundaram a agência <strong>Caminhos de Tiradentes</strong>, com o objetivo de proporcionar experiências autênticas e enriquecedoras a quem deseja conhecer a história e a beleza desta cidade encantadora.</p>
+        <p>Formada pela Cadastur, Rafaela conduz os grupos com o apoio e a orientação do pai, revelando os segredos escondidos por trás de cada rua de pedra e cada fachada histórica. Mais de uma década depois, seguem administrando a agência com orgulho, compartilhando o encanto de Tiradentes e criando memórias inesquecíveis para cada visitante.</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-number">2012</span>
+            <span class="about-stat-label">Ano de fundação</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-number">40+</span>
+            <span class="about-stat-label">Anos de experiência do guia Rosaldo</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-number">5</span>
+            <span class="about-stat-label">Passeios guiados disponíveis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASSEIOS EM DESTAQUE
+       ALTERE AQUI: cada cartão de passeio individualmente.
+       Para mudar o nome, imagem, duração, dificuldade, preço ou botão, edite o bloco .tour-card correspondente.
+       Os 5 cartões abaixo trazem os passeios reais oferecidos pela agência.
+  -->
+  <section id="passeios">
+    <h2 class="section-title">Passeios em Destaque</h2>
+    <div class="tours-grid">
+
+      <!-- CARD 1: CITY TOUR CAMINHOS DE TIRADENTES -->
+      <div class="tour-card" id="tour-citytour">
+        <!-- TROQUE AQUI PELA FOTO REAL DO CITY TOUR -->
+        <div class="tour-image" style="background-image: url('images/city_tour.webp');">
+          <span class="tour-badge">Mais Vendido</span>
+        </div>
+        <div class="tour-content">
+          <h3 class="tour-title">CITY TOUR CAMINHOS DE TIRADENTES</h3>
+          <div class="tour-schedule">Seg a sáb: 10h e 15h &bull; Dom: 10h</div>
+          <div class="tour-details">
+            <span>&#9201; 2h</span>
+            <span>&#129718; Fácil</span>
+          </div>
+          <p class="tour-description">Walking tour guiado pelo centro histórico, passando por becos, igrejas e os principais pontos turísticos de Tiradentes. Ponto de encontro: Rua Martins Paollucci, 36 — Centro.</p>
+          <div class="tour-price-wrapper">
+            <div>
+              <div class="tour-price-label">A partir de</div>
+              <div class="tour-price">R$ 90</div>
+            </div>
+            <a href="https://caminhosdetiradentes.com.br/produto/caminhos-de-tiradentes/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: CITY TOUR NOTURNO CAMINHOS ILUMINADOS -->
+      <div class="tour-card" id="tour-iluminados">
+        <!-- TROQUE AQUI PELA FOTO REAL DO PASSEIO NOTURNO -->
+        <div class="tour-image" style="background-image: url('images/city_tour_noturno.webp');">
+          <span class="tour-badge">Noturno</span>
+        </div>
+        <div class="tour-content">
+          <h3 class="tour-title">CITY TOUR NOTURNO: CAMINHOS ILUMINADOS</h3>
+          <div class="tour-schedule">Sex, sáb e feriados: 18h</div>
+          <div class="tour-details">
+            <span>&#9201; 2h</span>
+            <span>&#129718; Fácil</span>
+          </div>
+          <p class="tour-description">Passeio noturno pelo centro histórico, com as construções coloniais iluminadas por lampiões. O guia conta lendas, histórias e curiosidades da cidade. Saída da Praça Largo das Forras.</p>
+          <div class="tour-price-wrapper">
+            <div>
+              <div class="tour-price-label">A partir de</div>
+              <div class="tour-price">R$ 100</div>
+            </div>
+            <a href="https://caminhosdetiradentes.com.br/produto/caminhos-iluminados/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: TRILHA DA TRAVESSIA (SERRA DE SÃO JOSÉ) -->
+      <div class="tour-card" id="tour-travessia">
+        <!-- TROQUE AQUI PELA FOTO REAL DA TRILHA DA TRAVESSIA -->
+        <div class="tour-image" style="background-image: url('images/trilha_travessia.webp');">
+          <span class="tour-badge">Aventura</span>
+        </div>
+        <div class="tour-content">
+          <h3 class="tour-title">TRILHA DA TRAVESSIA</h3>
+          <div class="tour-schedule">Seg a sáb: 7h</div>
+          <div class="tour-details">
+            <span>&#9201; 5h</span>
+            <span>&#129718; Médio</span>
+          </div>
+          <p class="tour-description">Caminhada completa pela Serra de São José, pela histórica Calçada dos Escravizados, com parada no mirante e finalização na Trilha do Mangue, com piscinas naturais.</p>
+          <div class="tour-price-wrapper">
+            <div>
+              <div class="tour-price-label">A partir de</div>
+              <div class="tour-price">R$ 200</div>
+            </div>
+            <a href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4: TRILHA DO MANGUE (SERRA DE SÃO JOSÉ) -->
+      <div class="tour-card" id="tour-mangue">
+        <!-- TROQUE AQUI PELA FOTO REAL DA TRILHA DO MANGUE -->
+        <div class="tour-image" style="background-image: url('images/trilha_mangue.webp');">
+          <span class="tour-badge">Natureza</span>
+        </div>
+        <div class="tour-content">
+          <h3 class="tour-title">TRILHA DO MANGUE</h3>
+          <div class="tour-schedule">Seg a sáb: 9h</div>
+          <div class="tour-details">
+            <span>&#9201; 3h</span>
+            <span>&#129718; Médio</span>
+          </div>
+          <p class="tour-description">Caminhada de cerca de 45 minutos até piscinas naturais cristalinas na Serra de São José — o antigo caminho do escoamento do ouro. Ideal para um dia de contato com a natureza.</p>
+          <div class="tour-price-wrapper">
+            <div>
+              <div class="tour-price-label">A partir de</div>
+              <div class="tour-price">R$ 100</div>
+            </div>
+            <a href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose-trilha-do-mangue/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5: ENSAIO FOTOGRÁFICO -->
+      <div class="tour-card" id="tour-ensaio">
+        <!-- TROQUE AQUI POR UMA FOTO REAL DO ENSAIO FOTOGRÁFICO -->
+        <div class="tour-image" style="background-image: url('images/ensaio.webp');">
+          <span class="tour-badge">Ensaio</span>
+        </div>
+        <div class="tour-content">
+          <h3 class="tour-title">ENSAIO FOTOGRÁFICO</h3>
+          <div class="tour-schedule">Horário e roteiro a combinar</div>
+          <div class="tour-details">
+            <span>&#9201; 1h a 1h30</span>
+            <span>&#128247; Com fotógrafo</span>
+          </div>
+          <p class="tour-description">Ensaio fotográfico pelo charme das ruas de pedra, com o fotógrafo Marcus Mandarino. No mínimo 40 fotos em alta qualidade, entregues por link de download.</p>
+          <div class="tour-price-wrapper">
+            <div>
+              <div class="tour-price-label">Por indivíduo ou casal</div>
+              <div class="tour-price">R$ 350</div>
+            </div>
+            <a href="https://caminhosdetiradentes.com.br/produto/ensaio-fotografico/" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">RESERVAR &rarr;</a>
+          </div>
+        </div>
+      </div>
 
     </div>
+  </section>
+
+  <!-- MONTE SUA EXPERIÊNCIA / BLOCO INTERATIVO
+       ALTERE AQUI: texto do título, pergunta, botões do planner e sugestões finais do JavaScript.
+       Os botões disparam a função updatePlan() em scripts.js.
+  -->
+  <section id="experiencia">
+    <div class="planner-section">
+      <h2 class="planner-title">Monte sua experiência</h2>
+      <p>Quanto tempo você tem em Tiradentes?</p>
+      
+      <div class="planner-options">
+        <button class="planner-btn active" onclick="updatePlan(1, this)">1 dia</button>
+        <button class="planner-btn" onclick="updatePlan(2, this)">2 dias</button>
+        <button class="planner-btn" onclick="updatePlan(3, this)">3+ dias</button>
+      </div>
+
+      <div class="planner-result" id="plannerResult">
+        <strong>Sugestão:</strong> City Tour Caminhos de Tiradentes + City Tour Noturno Caminhos Iluminados
+      </div>
+    </div>
+  </section>
+
+  <!-- PERGUNTAS FREQUENTES
+       ALTERE AQUI: perguntas e respostas do FAQ.
+       Conteúdo baseado na página de FAQ real da agência.
+  -->
+  <section id="faq">
+    <h2 class="section-title">Perguntas Frequentes</h2>
+    <div class="guide-grid">
+      <div class="guide-card faq-card">
+        <h4>Os passeios são compartilhados?</h4>
+        <p>Sim, os passeios são compartilhados, com no mínimo 2 pessoas (o passeio noturno exige no mínimo 4).</p>
+      </div>
+      <div class="guide-card faq-card">
+        <h4>Qual o tempo de tolerância para atrasos?</h4>
+        <p>Cerca de 10 minutos. Chegar no horário marcado evita prejudicar a experiência do grupo.</p>
+      </div>
+      <div class="guide-card faq-card">
+        <h4>Preciso reservar com antecedência?</h4>
+        <p>Recomendamos reservar antecipadamente pelo site, especialmente em alta temporada e feriados.</p>
+      </div>
+      <div class="guide-card faq-card">
+        <h4>Em qual idioma são os passeios?</h4>
+        <p>Normalmente os passeios são conduzidos em português.</p>
+      </div>
+      <div class="guide-card faq-card">
+        <h4>O passeio é cancelado em caso de chuva?</h4>
+        <p>Passeios ocorrem mesmo com chuva moderada. Em condições extremas, podem ser adiados ou cancelados com reembolso integral.</p>
+      </div>
+      <div class="guide-card faq-card">
+        <h4>Dá para entrar nas igrejas durante o city tour?</h4>
+        <p>Sim, entramos na Igreja Matriz de Santo Antônio sempre que possível (pode estar fechada por cerimônias).</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- CTA FINAL / CHAMADA DE AÇÃO
+       ALTERE AQUI: texto da chamada e botão final para agendar ou escolher passeio.
+  -->
+  <div class="full-cta">
+    <h2>A cidade está esperando por você.</h2>
+    <a href="#passeios" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">ESCOLHA SEU PASSEIO</a>
+  </div>
 
+  <!-- CONTATO
+       ALTERE AQUI: endereço, telefones, e-mail e redes sociais.
+       Dados reais da agência Caminhos de Tiradentes.
+  -->
+  <section id="contato">
+    <h2 class="section-title">Contato</h2>
+    <div class="categories-grid contato-grid">
+      <div class="category-card contato-card">
+        <span c/* ============================================================
+   CAMINHOS DE TIRADENTES
+   JAVASCRIPT DA HOME
+============================================================ */
 
-    <!-- =========================================================
-         HEADER
-    ========================================================== -->
 
-    <header class="site-header" id="site-header">
+/* ============================================================
+   HEADER — EFEITO AO ROLAR
+============================================================ */
 
-        <div class="container header-inner">
+const header = document.getElementById("site-header");
 
-            <a href="#" class="logo" aria-label="Caminhos de Tiradentes">
+function updateHeader() {
 
-                <img
-                    src="images/logo.webp"
-                    alt="Caminhos de Tiradentes"
-                    onerror="this.style.display='none'; this.parentElement.classList.add('logo-placeholder');"
-                >
+    if (window.scrollY > 40) {
 
-                <span class="logo-fallback">
-                    Caminhos
-                    <small>de Tiradentes</small>
-                </span>
+        header.classList.add("scrolled");
 
-            </a>
+    } else {
 
+        header.classList.remove("scrolled");
 
-            <!-- NAVEGAÇÃO DESKTOP -->
+    }
 
-            <nav class="main-nav" aria-label="Navegação principal">
+}
 
-                <a href="#">Home</a>
+window.addEventListener("scroll", updateHeader);
 
-                <a href="#quem-somos">Quem Somos</a>
+updateHeader();
 
-                <a href="#passeios">Passeios</a>
 
-                <a href="#contato">Contato</a>
 
-                <a
-                    href="#reserve"
-                    class="nav-button"
-                >
-                    Reserve
-                </a>
+/* ============================================================
+   MENU MOBILE
+============================================================ */
 
-            </nav>
+const menuToggle =
+    document.getElementById("menu-toggle");
 
+const mobileMenu =
+    document.getElementById("mobile-menu");
 
-            <!-- BOTÃO MOBILE -->
 
-            <button
-                class="menu-toggle"
-                id="menu-toggle"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-            >
+menuToggle.addEventListener("click", () => {
 
-                <span></span>
-                <span></span>
-                <span></span>
+    const isOpen =
+        mobileMenu.classList.toggle("open");
 
-            </button>
+    menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+    );
 
-        </div>
+});
 
 
-        <!-- MENU MOBILE -->
+/*
+    Fecha o menu quando o usuário
+    clica em algum link.
+*/
 
-        <div class="mobile-menu" id="mobile-menu">
+const mobileLinks =
+    mobileMenu.querySelectorAll("a");
 
-            <a href="#">Home</a>
+mobileLinks.forEach((link) => {
 
-            <a href="#quem-somos">Quem Somos</a>
+    link.addEventListener("click", () => {
 
-            <a href="#passeios">Passeios</a>
+        mobileMenu.classList.remove("open");
 
-            <a href="#contato">Contato</a>
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
 
-            <a
-                href="#passeios"
-                class="mobile-menu-button"
-            >
-                Passeios
-            </a>
+    });
 
-        </div>
+});
 
-    </header>
 
 
+/* ============================================================
+   NEWSLETTER
+============================================================ */
 
-    <main>
+const newsletterForm =
+    document.getElementById("newsletter-form");
 
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
+const newsletterFeedback =
+    document.getElementById("newsletter-feedback");
 
-        <section class="hero">
 
-            <div class="hero-background"></div>
+if (newsletterForm) {
 
-            <div class="container hero-grid">
+    newsletterForm.addEventListener("submit", (event) => {
 
-                <div class="hero-content">
+        event.preventDefault();
 
-                    <span class="eyebrow">
-                        BEM-VINDO À
-                    </span>
+        const input =
+            newsletterForm.querySelector("input[type='email']");
 
-                    <h2>
-                        Agência
-                        <span>Caminhos</span>
-                        de Tiradentes!
-                    </h2>
+        if (input && input.value) {
 
-                    <p>
-                        Por caminhos e becos, monumentos por dentro e por
-                        fora, trilhas repletas de história! Participe dos
-                        nossos passeios e mergulhe na riqueza cultural
-                        desta cidade encantadora.
-                    </p>
+            newsletterFeedback.textContent =
+                "Obrigado por se inscrever!";
 
+            newsletterForm.reset();
 
-                    <div class="hero-buttons">
+        }
 
-                        <a
-                            href="#passeios"
-                            class="button button-primary"
-                        >
-                            Agende agora
-                            <span>↗</span>
-                        </a>
+    });
 
-                        <a
-                            href="#quem-somos"
-                            class="button button-outline"
-                        >
-                            Quem somos
-                        </a>
+}
 
-                    </div>
 
-                </div>
 
+/* ============================================================
+   ANO DO RODAPÉ
+============================================================ */
 
-                <div class="hero-visual">
+const footerYear =
+    document.getElementById("footer-year");
 
-                    <div class="hero-image-wrapper">
+if (footerYear) {
 
-                        <img
-                            src="images/header.webp"
-                            alt="Paisagem de Tiradentes"
-                            class="hero-image"
-                        >
+    footerYear.textContent =
+        new Date().getFullYear();
 
-                        <div class="hero-stamp">
+}
 
-                            <span>
-                                CAMINHOS DE
-                            </span>
 
-                            <strong>
-                                TIRADENTES
-                            </strong>
 
-                            <small>
-                                MINAS GERAIS
-                            </small>
+/* ============================================================
+   ANIMAÇÃO DE ENTRADA
+============================================================ */
 
-                        </div>
+const animatedElements =
+    document.querySelectorAll(
+        ".tour-card, .pick-card, .benefit, .gallery-item"
+    );
 
-                    </div>
 
-                </div>
+const observer =
+    new IntersectionObserver(
+        (entries) => {
 
-            </div>
+            entries.forEach((entry) => {
 
-        </section>
+                if (entry.isIntersecting) {
 
+                    entry.target.classList.add(
+                        "is-visible"
+                    );
 
+                    observer.unobserve(
+                        entry.target
+                    );
 
-        <!-- =====================================================
-             PASSEIOS
-        ====================================================== -->
+                }
 
-        <section
-            class="tours section"
-            id="passeios"
-        >
+            });
 
-            <div class="container">
+        },
+        {
+            threshold: 0.12
+        }
+    );
 
-                <div class="section-heading">
 
-                    <div>
+animatedElements.forEach((element) => {
 
-                        <span class="eyebrow">
-                            NOSSOS PASSEIOS
-                        </span>
+    observer.observe(element);
 
-                        <h2>
-                            O que fazer em
-                            <em>Tiradentes?</em>
-                        </h2>
+});
 
-                    </div>
 
-                    <p>
-                        Os melhores passeios em Tiradentes, escolhidos
-                        para revelar histórias, paisagens e experiências
-                        únicas da cidade.
-                    </p>
 
-                </div>
+/* ============================================================
+   FALLBACK DE IMAGENS
+============================================================ */
 
+/*
+    Enquanto você ainda não possui
+    as fotos reais do cliente, esta
+    função evita que uma imagem quebrada
+    apareça de forma estranha.
 
-                <div class="tour-grid">
+    Depois, basta substituir os arquivos
+    da pasta /images.
+*/
 
-                    <!-- CITY TOUR -->
+const images =
+    document.querySelectorAll("img");
 
-                    <article class="tour-card">
 
-                        <a
-                            href="https://caminhosdetiradentes.com.br/produto/caminhos-de-tiradentes/"
-                            class="tour-image"
-                        >
+images.forEach((image) => {
 
-                            <img
-                                src="images/city_tour.webp"
-                                alt="City Tour Caminhos de Tiradentes"
-                            >
+    image.addEventListener("error", () => {
 
-                            <span class="tour-category">
-                                História
-                            </span>
+        /*
+            Não substituímos a logo por uma
+            imagem externa.
 
-                        </a>
+            Para imagens de conteúdo,
+            usamos um fundo neutro.
+        */
 
+        if (
+            image.classList.contains("hero-image") ||
+            image.closest(".tour-image") ||
+            image.closest(".why-image") ||
+            image.closest(".gallery-item")
+        ) {
 
-                        <div class="tour-content">
+            image.style.display = "none";
 
-                            <h3>
-                                City Tour Caminhos de Tiradentes
-                            </h3>
+            const parent =
+                image.parentElement;
 
-                            <p>
-                                Indicamos começar sua visita no primeiro
-                                dia com um passeio a pé pela cidade,
-                                guiado por guias de turismo que contarão
-                                histórias e curiosidades locais.
-                            </p>
+            parent.classList.add(
+                "image-placeholder"
+            );
 
-                            <div class="tour-footer">
+        }
 
-                                <div class="tour-price">
+    });
 
-                                    <small>
-                                        De
-                                    </small>
+});lass="category-icon">&#128205;</span>
+        <span>Rua da Câmara, 103 — Centro Histórico<br>Próximo à Câmara dos Vereadores<br>CEP: 36325-000</span>
+      </div>
+      <a href="mailto:caminhosdetiradentes@gmail.com" class="category-card contato-card">
+        <span class="category-icon">&#9993;</span>
+        <span>caminhosdetiradentes@gmail.com</span>
+      </a>
+      <a href="tel:+5532999658707" class="category-card contato-card">
+        <span class="category-icon">&#128222;</span>
+        <span>(32) 99965-8707<br>(32) 99962-3958</span>
+      </a>
+      <a href="https://www.instagram.com/caminhosdetiradentes_citytour" target="_blank" rel="noopener" class="category-card contato-card">
+        <span class="category-icon">&#128247;</span>
+        <span>@caminhosdetiradentes_citytour</span>
+      </a>
+    </div>
+  </section>
 
-                                    <strong>
-                                        R$ 90,00
-                                    </strong>
+  <!-- FOOTER / RODAPÉ
+       ALTERE AQUI: nome do site, ano, endereço, telefones e texto de direitos autorais.
+  -->
+  <footer>
+    <p>Rua da Câmara, 103 — Centro Histórico, Tiradentes MG &bull; (32) 99965-8707 / (32) 99962-3958</p>
+    <p>&copy; 2026 Caminhos de Tiradentes — Todos os direitos reservados</p>
+  </footer>
 
-                                </div>
-
-                                <a
-                                    href="https://caminhosdetiradentes.com.br/produto/caminhos-de-tiradentes/"
-                                    class="tour-link"
-                                >
-                                    Agende agora →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- CAMINHOS ILUMINADOS -->
-
-                    <article class="tour-card">
-
-                        <a
-                            href="https://caminhosdetiradentes.com.br/produto/caminhos-iluminados/"
-                            class="tour-image"
-                        >
-
-                            <img
-                                src="images/city_tour_noturno.webp"
-                                alt="City Tour noturno Caminhos Iluminados"
-                            >
-
-                            <span class="tour-category">
-                                Noturno
-                            </span>
-
-                        </a>
-
-
-                        <div class="tour-content">
-
-                            <h3>
-                                City Tour noturno: Caminhos Iluminados
-                            </h3>
-
-                            <p>
-                                Um passeio noturno encantador, onde as
-                                lendas e histórias de Tiradentes ganham
-                                vida sob a luz dos lampiões, com guias
-                                apaixonados pela cidade.
-                            </p>
-
-                            <div class="tour-footer">
-
-                                <div class="tour-price">
-
-                                    <small>
-                                        De
-                                    </small>
-
-                                    <strong>
-                                        R$ 100,00
-                                    </strong>
-
-                                </div>
-
-                                <a
-                                    href="https://caminhosdetiradentes.com.br/produto/caminhos-iluminados/"
-                                    class="tour-link"
-                                >
-                                    Agende agora →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- TRILHA DA TRAVESSIA -->
-
-                    <article class="tour-card tour-card-featured">
-
-                        <a
-                            href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose/"
-                            class="tour-image"
-                        >
-
-                            <img
-                                src="images/trilha_travessia.webp"
-                                alt="Trilha da Travessia na Serra de São José"
-                            >
-
-                            <span class="tour-category">
-                                Aventura
-                            </span>
-
-                        </a>
-
-
-                        <div class="tour-content">
-
-                            <h3>
-                                Passeio ecológico Serra de São José:
-                                Trilha da Travessia
-                            </h3>
-
-                            <p>
-                                Para os aventureiros! Uma caminhada
-                                desafiadora de 5 a 6 horas pela Calçada
-                                dos Escravos, pelo topo da serra, com
-                                vistas panorâmicas da cidade e mergulho
-                                na piscina natural do mangue.
-                            </p>
-
-                            <div class="tour-footer">
-
-                                <div class="tour-price">
-
-                                    <small>
-                                        De
-                                    </small>
-
-                                    <strong>
-                                        R$ 200,00
-                                    </strong>
-
-                                </div>
-
-                                <a
-                                    href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose/"
-                                    class="tour-link"
-                                >
-                                    Agende agora →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- TRILHA DO MANGUE -->
-
-                    <article class="tour-card">
-
-                        <a
-                            href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose-trilha-do-mangue/"
-                            class="tour-image"
-                        >
-
-                            <img
-                                src="images/trilha_mangue.webp"
-                                alt="Trilha do Mangue na Serra de São José"
-                            >
-
-                            <span class="tour-category">
-                                Natureza
-                            </span>
-
-                        </a>
-
-
-                        <div class="tour-content">
-
-                            <h3>
-                                Passeio ecológico na Serra de São José:
-                                Trilha do Mangue
-                            </h3>
-
-                            <p>
-                                Uma caminhada de 45 minutos até piscinas
-                                naturais cristalinas, proporcionando 3
-                                horas de contato sereno com a natureza.
-                            </p>
-
-                            <div class="tour-footer">
-
-                                <div class="tour-price">
-
-                                    <small>
-                                        De
-                                    </small>
-
-                                    <strong>
-                                        R$ 120,00
-                                    </strong>
-
-                                </div>
-
-                                <a
-                                    href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose-trilha-do-mangue/"
-                                    class="tour-link"
-                                >
-                                    Agende agora →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- ENSAIO FOTOGRÁFICO -->
-
-                    <article class="tour-card">
-
-                        <a
-                            href="https://caminhosdetiradentes.com.br/produto/ensaio-fotografico/"
-                            class="tour-image"
-                        >
-
-                            <img
-                                src="images/ensaio.webp"
-                                alt="Ensaio fotográfico em Tiradentes"
-                            >
-
-                            <span class="tour-category">
-                                Fotografia
-                            </span>
-
-                        </a>
-
-
-                        <div class="tour-content">
-
-                            <h3>
-                                Ensaio fotográfico Caminhos de Tiradentes
-                            </h3>
-
-                            <p>
-                                Registre os momentos especiais da sua
-                                visita com o renomado fotógrafo
-                                profissional Marcus Mandarino, pelo
-                                centro histórico da cidade.
-                            </p>
-
-                            <div class="tour-footer">
-
-                                <div class="tour-price">
-
-                                    <small>
-                                        Valor
-                                    </small>
-
-                                    <strong>
-                                        R$ 350,00
-                                    </strong>
-
-                                </div>
-
-                                <a
-                                    href="https://caminhosdetiradentes.com.br/produto/ensaio-fotografico/"
-                                    class="tour-link"
-                                >
-                                    Agende agora →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             DEPOIMENTOS / GALERIA
-        ====================================================== -->
-
-        <section class="testimonials section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            DEPOIMENTOS
-                        </span>
-
-                        <h2>
-                            O que eles
-                            <em>disseram.</em>
-                        </h2>
-
-                    </div>
-
-                    <a
-                        href="https://www.instagram.com/caminhosdetiradentes_citytour?igsh=ajJkcGUxYzQwbW5r&utm_source=qr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-link"
-                    >
-                        Ver no Instagram →
-                    </a>
-
-                </div>
-
-
-                <div class="gallery-grid">
-
-                    <div class="gallery-item gallery-large">
-
-                        <img
-                            src="images/hero-tiradentes.jpg"
-                            alt="City Tour Caminhos de Tiradentes"
-                        >
-
-                    </div>
-
-
-                    <div class="gallery-item">
-
-                        <img
-                            src="images/historia.jpg"
-                            alt="Passeio guiado em Tiradentes"
-                        >
-
-                    </div>
-
-
-                    <div class="gallery-item">
-
-                        <img
-                            src="images/travessia.jpg"
-                            alt="Trilha da Travessia"
-                        >
-
-                    </div>
-
-
-                    <div class="gallery-item">
-
-                        <img
-                            src="images/fotografia-passeio.jpg"
-                            alt="Ensaio fotográfico em Tiradentes"
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <div class="testimonial-notice">
-
-                    <span>
-                        ★
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Avaliações reais
-                        </strong>
-
-                        <p>
-                            Os depoimentos e avaliações dos clientes da
-                            Agência Caminhos serão inseridos aqui durante
-                            a implementação final do site.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             POR QUE ESCOLHER-NOS
-        ====================================================== -->
-
-        <section
-            class="why-section section"
-            id="quem-somos"
-        >
-
-            <div class="container why-grid">
-
-                <div class="why-image">
-
-                    <img
-                        src="images/nos.webp"
-                        alt="Tiradentes histórica"
-                    >
-
-                    <div class="image-label">
-                        <span>
-                            DESDE
-                        </span>
-
-                        <strong>
-                            TIRADENTES
-                        </strong>
-                    </div>
-
-                </div>
-
-
-                <div class="why-content">
-
-                    <span class="eyebrow">
-                        POR QUE CAMINHAR CONOSCO?
-                    </span>
-
-                    <h2>
-                        Mais que um passeio.
-                        <em>Uma forma de conhecer.</em>
-                    </h2>
-
-                    <p>
-                        Optar pela agência de turismo Caminhos de
-                        Tiradentes é a escolha perfeita para sua visita
-                        a esta cidade histórica. Com décadas de tradição
-                        e um profundo conhecimento local, oferecemos
-                        passeios que revelam a rica cultura e história
-                        de Tiradentes.
-                    </p>
-
-                    <p>
-                        Venha conosco e descubra o que torna essa cidade
-                        tão especial.
-                    </p>
-
-                    <a
-                        href="#passeios"
-                        class="button button-dark"
-                    >
-                        Passeios
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CTA — TIRADENTES AGUARDA VOCÊ
-        ====================================================== -->
-
-        <section class="final-cta">
-
-            <div class="container">
-
-                <div class="final-cta-content">
-
-                    <span class="eyebrow">
-                        TIRADENTES ESPERA POR VOCÊ
-                    </span>
-
-                    <h2>
-                        Tiradentes aguarda
-                        <em>você!</em>
-                    </h2>
-
-                    <p>
-                        Deixe-nos ser seu guia e mostrar o que Tiradentes
-                        tem de melhor para oferecer.
-                    </p>
-
-
-                    <div class="final-buttons">
-
-                        <a
-                            href="#passeios"
-                            class="button button-light"
-                        >
-                            Comece a explorar
-                            <span>↗</span>
-                        </a>
-
-                        <a
-                            href="https://wa.me/5532999658707"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="button button-whatsapp"
-                        >
-                            WhatsApp
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             ESCOLHA UM PASSEIO
-        ====================================================== -->
-
-        <section class="picks section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            VAMOS DESCOBRIR
-                        </span>
-
-                        <h2>
-                            Escolha um
-                            <em>passeio.</em>
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        Participe de um passeio noturno encantador, onde
-                        as lendas e histórias de Tiradentes ganham vida
-                        sob a luz dos lampiões. Descubra o lado misterioso
-                        e charmoso da cidade com nossos guias apaixonados.
-                    </p>
-
-                </div>
-
-
-                <div class="picks-grid">
-
-                    <a
-                        href="https://caminhosdetiradentes.com.br/produto/caminhos-de-tiradentes/"
-                        class="pick-card"
-                    >
-
-                        <span class="pick-number">
-                            01
-                        </span>
-
-                        <h3>
-                            City Tour Caminhos de Tiradentes
-                        </h3>
-
-                        <p>
-                            Indicamos começar sua visita com um passeio a
-                            pé pela cidade, guiado por guias de turismo
-                            que contarão histórias e curiosidades locais.
-                        </p>
-
-                        <span class="pick-arrow">
-                            ↗
-                        </span>
-
-                    </a>
-
-
-                    <a
-                        href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose-trilha-do-mangue/"
-                        class="pick-card"
-                    >
-
-                        <span class="pick-number">
-                            02
-                        </span>
-
-                        <h3>
-                            Trilha do Mangue
-                        </h3>
-
-                        <p>
-                            Uma caminhada de 45 minutos leva você a
-                            piscinas naturais cristalinas: 3 horas de
-                            contato sereno com a natureza.
-                        </p>
-
-                        <span class="pick-arrow">
-                            ↗
-                        </span>
-
-                    </a>
-
-
-                    <a
-                        href="https://caminhosdetiradentes.com.br/produto/caminhos-da-serra-de-sao-jose/"
-                        class="pick-card"
-                    >
-
-                        <span class="pick-number">
-                            03
-                        </span>
-
-                        <h3>
-                            Trilha da Travessia
-                        </h3>
-
-                        <p>
-                            Para os aventureiros! Caminhada de 5 a 6
-                            horas pela Calçada dos Escravos, com vistas
-                            panorâmicas de Tiradentes.
-                        </p>
-
-                        <span class="pick-arrow">
-                            ↗
-                        </span>
-
-                    </a>
-
-
-                    <a
-                        href="https://caminhosdetiradentes.com.br/produto/ensaio-fotografico/"
-                        class="pick-card"
-                    >
-
-                        <span class="pick-number">
-                            04
-                        </span>
-
-                        <h3>
-                            Passeio Fotográfico
-                        </h3>
-
-                        <p>
-                            Capture momentos especiais com o renomado
-                            fotógrafo Marcus Mandarino pelo centro
-                            histórico de Tiradentes.
-                        </p>
-
-                        <span class="pick-arrow">
-                            ↗
-                        </span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             INSTAGRAM
-        ====================================================== -->
-
-        <section class="instagram-cta">
-
-            <div class="container">
-
-                <p>
-                    Siga-nos no Instagram para ficar por dentro das
-                    novidades e saber mais sobre nós!
-                </p>
-
-                <a
-                    href="https://www.instagram.com/caminhosdetiradentes_citytour?igsh=ajJkcGUxYzQwbW5r&utm_source=qr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button button-dark"
-                >
-                    Seguir no Instagram
-                    <span>↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer class="footer" id="contato">
-
-        <div class="container">
-
-            <div class="footer-top">
-
-                <div class="footer-brand">
-
-                    <a
-                        href="#"
-                        class="footer-logo"
-                    >
-                        Caminhos
-                        <small>
-                            de Tiradentes
-                        </small>
-                    </a>
-
-                    <p>
-                        Nós, da Agência Caminhos, estamos aqui para
-                        proporcionar a você uma experiência
-                        verdadeiramente especial nesta cidade encantadora.
-                    </p>
-
-                    <a
-                        href="https://www.instagram.com/caminhosdetiradentes_citytour?igsh=ajJkcGUxYzQwbW5r&utm_source=qr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="footer-instagram"
-                    >
-                        Instagram ↗
-                    </a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h3>
-                        Navegação
-                    </h3>
-
-                    <a href="#">
-                        Home
-                    </a>
-
-                    <a href="#quem-somos">
-                        Quem Somos
-                    </a>
-
-                    <a href="#passeios">
-                        Passeios
-                    </a>
-
-                    <a href="#contato">
-                        Contato
-                    </a>
-
-                    <a href="https://caminhosdetiradentes.com.br/minha-conta/">
-                        Minha Conta
-                    </a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h3>
-                        Informações
-                    </h3>
-
-                    <a href="https://caminhosdetiradentes.com.br/privacidade">
-                        Política de Privacidade
-                    </a>
-
-                    <a href="https://caminhosdetiradentes.com.br/faq">
-                        F.A.Q.
-                    </a>
-
-                </div>
-
-
-                <div class="footer-column footer-newsletter">
-
-                    <h3>
-                        Newsletter
-                    </h3>
-
-                    <form
-                        class="newsletter-form"
-                        id="newsletter-form"
-                    >
-
-                        <input
-                            type="email"
-                            placeholder="Digite seu email"
-                            aria-label="Digite seu email"
-                            required
-                        >
-
-                        <button type="submit">
-                            Inscrever
-                        </button>
-
-                    </form>
-
-                    <p class="newsletter-feedback" id="newsletter-feedback"></p>
-
-                </div>
-
-
-                <div class="footer-column footer-contact">
-
-                    <h3>
-                        Fale conosco
-                    </h3>
-
-                    <a href="tel:+5532999658707">
-                        (32) 99965-8707
-                    </a>
-
-                    <a href="tel:+5532999623958">
-                        (32) 99962-3958
-                    </a>
-
-                    <a
-                        href="https://wa.me/5532999658707"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        WhatsApp ↗
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                <span>
-                    Copyright <span id="footer-year">2026</span> © Caminhos de Tiradentes — Todos os Direitos Reservados
-                </span>
-
-                <span>
-                    Tiradentes • Minas Gerais
-                </span>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-
-    <!-- =========================================================
-         BOTÃO FLUTUANTE WHATSAPP
-    ========================================================== -->
-
-    <a
-        href="https://wa.me/5532999658707"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="whatsapp-float"
-        aria-label="Falar pelo WhatsApp"
-    >
-
-        <span>
-            WhatsApp
-        </span>
-
-        <strong>
-            ↗
-        </strong>
-
-    </a>
-
-
-
-    <!-- JAVASCRIPT -->
-
-    <script src="scripts.js"></script>
-
+  <script src="scripts.js"></script>
 </body>
-
 </html>
