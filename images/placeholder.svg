@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Placeholder de imagem">
+  <rect width="800" height="450" fill="#dfe7dd"/>
+  <rect x="40" y="40" width="720" height="370" rx="24" fill="#b7c8b4"/>
+  <path d="M90 300 L200 180 L290 250 L410 120 L520 300 L710 160 L710 350 L90 350 Z" fill="#5e7d5c"/>
+  <circle cx="585" cy="120" r="42" fill="#f3d38b"/>
+  <rect x="275" y="180" width="180" height="120" rx="16" fill="#f4efe6" opacity="0.75"/>
+  <text x="400" y="240" text-anchor="middle" font-size="30" font-family="Arial, sans-serif" fill="#1e3a2f" font-weight="700">IMAGEM</text>
+  <text x="400" y="275" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#1e3a2f">Troque por sua foto</text>
+</svg>

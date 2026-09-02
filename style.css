@@ -1,0 +1,472 @@
+/* CSS RESET & VARIABLES
+   ALTERE AQUI: todas as cores principais do site, fonte e paleta visual geral.
+   Toda mudança feita em :root afeta vários elementos ao mesmo tempo.
+*/
+:root {
+  --verde-floresta: #1E3A2F;
+  --creme: #F3EDE0;
+  --terracota: #D56B3F;
+  --amarelo-areia: #D8B46A;
+  --preto: #151515;
+  --branco: #FFFFFF;
+  --fonte-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fonte-principal);
+}
+
+body {
+  background-color: var(--creme);
+  color: var(--preto);
+  line-height: 1.6;
+}
+
+/* HEADER & NAVBAR
+   ALTERE AQUI: o fundo do topo do site, a barra fixa e o estilo do menu.
+   Os itens do menu estão em .nav-links a e .logo.
+*/
+header {
+  background-color: var(--verde-floresta);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--creme);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--terracota);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--creme);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--amarelo-areia);
+}
+
+/* HERO SECTION
+   ALTERE AQUI: a imagem principal, a altura, a sobreposição de cor e o comportamento da seção inicial.
+   Se quiser trocar a foto ou o efeito de escurecimento, mude a propriedade background da classe .hero.
+*/
+.hero {
+  position: relative;
+  min-height: 85vh;
+  background: linear-gradient(rgba(30, 58, 47, 0.5), rgba(21, 21, 21, 0.7)), 
+              url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-content {
+  color: var(--creme);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--creme);
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--creme);
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--terracota);
+  color: var(--creme);
+}
+
+.btn-primary:hover {
+  background-color: #c05a30;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: var(--branco);
+}
+
+.btn-whatsapp:hover {
+  background-color: #20bd5a;
+}
+
+/* CARD FLUTUANTE HERO
+   ALTERE AQUI: o bloco de avaliação flutuante à direita da seção principal.
+   Este cartão controla o texto de "5.0", a quantidade de viajantes e o fundo do badge.
+*/
+.hero-card-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-card {
+  background: rgba(243, 237, 224, 0.95);
+  backdrop-filter: blur(5px);
+  padding: 1.8rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  max-width: 280px;
+  border: 1px solid var(--amarelo-areia);
+}
+
+.hero-card-rating {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--verde-floresta);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-card-text {
+  font-size: 0.95rem;
+  color: var(--preto);
+  margin-bottom: 1rem;
+}
+
+.hero-card-badge {
+  display: inline-block;
+  background-color: var(--amarelo-areia);
+  color: var(--preto);
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* GLOBAL SECTIONS */
+section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--verde-floresta);
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+/* CATEGORIAS
+   ALTERE AQUI: o layout da grade de categorias (quantos blocos aparecem por linha e o espaço entre eles).
+   Cada .category-card representa um item de menu visual.
+*/
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background-color: var(--verde-floresta);
+  color: var(--creme);
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  border: 2px solid transparent;
+}
+
+.category-card:hover {
+  background-color: var(--terracota);
+  transform: translateY(-5px);
+}
+
+.category-icon {
+  font-size: 2rem;
+}
+
+/* TOURS / PASSEIOS
+   ALTERE AQUI: o grid dos cards de passeio e todos os estilos internos do cartão.
+   Os títulos, preços, ícones, avaliação, destaque e botão estão aqui.
+*/
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tour-card {
+  background-color: var(--branco);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.tour-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.tour-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--terracota);
+  color: var(--creme);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tour-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tour-title {
+  font-size: 1.3rem;
+  color: var(--verde-floresta);
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.tour-rating {
+  color: var(--terracota);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.tour-details {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.tour-price-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tour-price-label {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.tour-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--verde-floresta);
+}
+
+/* MONTE SUA EXPERIÊNCIA
+   ALTERE AQUI: a caixa interativa que muda de acordo com o tempo de viagem.
+   O estilo dos botões e do bloco de resultado estão neste bloco.
+*/
+.planner-section {
+  background-color: var(--verde-floresta);
+  color: var(--creme);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.planner-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--creme);
+}
+
+.planner-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.planner-btn {
+  background: transparent;
+  border: 2px solid var(--amarelo-areia);
+  color: var(--creme);
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.planner-btn.active, .planner-btn:hover {
+  background-color: var(--amarelo-areia);
+  color: var(--preto);
+}
+
+.planner-result {
+  background-color: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px dashed var(--amarelo-areia);
+  font-size: 1.1rem;
+}
+
+/* GUIA DE TIRADENTES
+   ALTERE AQUI: as opções de guia/FAQ/links rápidos.
+   Cada .guide-card é um item da grade.
+*/
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+.guide-card {
+  background-color: var(--branco);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--verde-floresta);
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.guide-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+}
+
+/* FULL WIDTH CTA
+   ALTERE AQUI: o bloco grande de chamada para ação, com imagem de fundo e texto principal.
+   É a seção que costuma anunciar a última decisão do visitante.
+*/
+.full-cta {
+  background: linear-gradient(rgba(30, 58, 47, 0.7), rgba(30, 58, 47, 0.7)), 
+              url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  padding: 8rem 2rem;
+  text-align: center;
+  color: var(--creme);
+}
+
+.full-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+/* FOOTER
+   ALTERE AQUI: o rodapé do site, como fundo escuro, texto final e ano.
+*/
+footer {
+  background-color: var(--preto);
+  color: var(--creme);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+  .hero-card-wrapper {
+    justify-content: center;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .nav-links {
+    display: none;
+  }
+}
