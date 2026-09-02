@@ -51,12 +51,18 @@ nav {
 .logo {
   display: flex;
   align-items: center;
+  gap: 0.7rem;
   color: var(--creme);
   font-weight: 800;
   font-size: 1.3rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.85;
 }
 
 .logo span {
@@ -66,18 +72,14 @@ nav {
 /* LOGO (IMAGEM)
    ALTERE AQUI: o tamanho da logo no cabeçalho.
    O filtro deixa a arte (originalmente preta) branca, para aparecer bem
-   sobre o fundo verde-escuro do header. Para trocar a imagem, basta
-   substituir o arquivo images/logo.webp mantendo o mesmo nome.
+   sobre o fundo verde-escuro do header, ao lado do nome em texto.
+   Para trocar a imagem, basta substituir o arquivo images/logo.webp
+   mantendo o mesmo nome.
 */
 .logo-img {
-  height: 52px;
+  height: 44px;
   width: auto;
   filter: brightness(0) invert(1);
-  transition: opacity 0.2s;
-}
-
-.logo-img:hover {
-  opacity: 0.85;
 }
 
 .nav-links {
@@ -975,6 +977,9 @@ footer p {
     text-align: left;
   }
   .logo-img {
-    height: 40px;
+    height: 34px;
+  }
+  .logo {
+    font-size: 1.05rem;
   }
 }
