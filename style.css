@@ -1,472 +1,2133 @@
-/* CSS RESET & VARIABLES
-   ALTERE AQUI: todas as cores principais do site, fonte e paleta visual geral.
-   Toda mudança feita em :root afeta vários elementos ao mesmo tempo.
-*/
+/* ============================================================
+   CAMINHOS DE TIRADENTES
+   HOME — AVENTURA & EXPERIÊNCIA
+============================================================ */
+
+
+/* ============================================================
+   VARIÁVEIS
+============================================================ */
+
 :root {
-  --verde-floresta: #1E3A2F;
-  --creme: #F3EDE0;
-  --terracota: #D56B3F;
-  --amarelo-areia: #D8B46A;
-  --preto: #151515;
-  --branco: #FFFFFF;
-  --fonte-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+    --green: #1e3a2f;
+    --green-dark: #14291f;
+    --green-light: #315443;
+
+    --cream: #f3ede0;
+    --cream-light: #faf8f2;
+
+    --terracotta: #d56b3f;
+    --sand: #d8b46a;
+
+    --black: #151515;
+    --white: #ffffff;
+
+    --gray: #6d6d66;
+    --line: rgba(21, 21, 21, 0.14);
+
+    --container: 1180px;
+
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 28px;
+
+    --shadow:
+        0 18px 50px rgba(21, 21, 21, 0.10);
+
 }
 
+
+/* ============================================================
+   RESET
+============================================================ */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--fonte-principal);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--creme);
-  color: var(--preto);
-  line-height: 1.6;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    color: var(--black);
+
+    background:
+        var(--cream-light);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
 }
 
-/* HEADER & NAVBAR
-   ALTERE AQUI: o fundo do topo do site, a barra fixa e o estilo do menu.
-   Os itens do menu estão em .nav-links a e .logo.
-*/
-header {
-  background-color: var(--verde-floresta);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
 }
 
-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.2rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+a {
+    color: inherit;
+    text-decoration: none;
 }
+
+button {
+    font: inherit;
+}
+
+.container {
+
+    width: min(
+        calc(100% - 48px),
+        var(--container)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* ============================================================
+   TIPOGRAFIA
+============================================================ */
+
+h1,
+h2,
+h3 {
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-weight: 600;
+
+    line-height: 1.05;
+}
+
+h1 {
+    font-size: clamp(3.8rem, 7vw, 6.7rem);
+}
+
+h2 {
+    font-size: clamp(2.7rem, 5vw, 4.6rem);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+em {
+
+    font-style: italic;
+
+    color: var(--terracotta);
+}
+
+.eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    color: var(--terracotta);
+}
+
+.section {
+
+    padding: 120px 0;
+}
+
+
+/* ============================================================
+   TOPBAR
+============================================================ */
+
+.topbar {
+
+    position: relative;
+
+    z-index: 101;
+
+    background: var(--green-dark);
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.topbar-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 40px;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.02em;
+}
+
+.topbar-account:hover {
+    color: var(--sand);
+}
+
+.topbar-social {
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.topbar-social a:hover {
+    color: var(--sand);
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.site-header {
+
+    position: absolute;
+
+    top: 40px;
+    left: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    color: var(--white);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        top 0.3s ease;
+}
+
+.site-header.scrolled {
+
+    position: fixed;
+
+    top: 0;
+
+    color: var(--black);
+
+    background:
+        rgba(250, 248, 242, 0.96);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+
+    min-height: 94px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* LOGO */
 
 .logo {
-  color: var(--creme);
-  font-weight: 800;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    min-width: 190px;
+
+    height: 70px;
 }
 
-.logo span {
-  color: var(--terracota);
+.logo img {
+
+    width: 190px;
+
+    height: auto;
+
+    object-fit: contain;
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
+.logo-fallback {
+
+    display: none;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 1.8rem;
+
+    font-weight: 700;
+
+    line-height: 0.8;
 }
 
-.nav-links a {
-  color: var(--creme);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
+.logo-fallback small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
 }
 
-.nav-links a:hover {
-  color: var(--amarelo-areia);
+.logo-placeholder .logo-fallback {
+    display: block;
 }
 
-/* HERO SECTION
-   ALTERE AQUI: a imagem principal, a altura, a sobreposição de cor e o comportamento da seção inicial.
-   Se quiser trocar a foto ou o efeito de escurecimento, mude a propriedade background da classe .hero.
-*/
+
+/* NAVEGAÇÃO */
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+}
+
+.main-nav > a:not(.nav-button) {
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease;
+}
+
+.main-nav > a:not(.nav-button):hover {
+    color: var(--sand);
+}
+
+.site-header.scrolled
+.main-nav > a:not(.nav-button):hover {
+    color: var(--terracotta);
+}
+
+.nav-button {
+
+    padding: 13px 22px;
+
+    border-radius: 999px;
+
+    background: var(--terracotta);
+
+    color: var(--white);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.nav-button:hover {
+
+    transform: translateY(-2px);
+
+    background: #c45d34;
+}
+
+
+/* MOBILE MENU */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 46px;
+
+    height: 46px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: var(--terracotta);
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 20px;
+
+    height: 2px;
+
+    background: var(--white);
+}
+
+.mobile-menu {
+
+    display: none;
+
+    padding: 20px 24px 28px;
+
+    background: var(--cream-light);
+
+    color: var(--black);
+}
+
+.mobile-menu.open {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.mobile-menu a {
+
+    font-weight: 600;
+}
+
+.mobile-menu-button {
+
+    padding: 14px 20px;
+
+    text-align: center;
+
+    border-radius: 999px;
+
+    color: var(--white) !important;
+
+    background: var(--terracotta);
+}
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
 .hero {
-  position: relative;
-  min-height: 85vh;
-  background: linear-gradient(rgba(30, 58, 47, 0.5), rgba(21, 21, 21, 0.7)), 
-              url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  padding: 0 2rem;
+
+    position: relative;
+
+    min-height: 790px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    color: var(--white);
+
+    background: var(--green);
 }
 
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 41, 31, 0.98) 0%,
+            rgba(20, 41, 31, 0.90) 42%,
+            rgba(20, 41, 31, 0.30) 100%
+        );
+}
+
+.hero-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(400px, 0.8fr);
+
+    align-items: center;
+
+    gap: 80px;
+
+    padding-top: 100px;
 }
 
 .hero-content {
-  color: var(--creme);
+
+    max-width: 720px;
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  color: var(--creme);
-  text-transform: uppercase;
+.hero-content h1 {
+
+    margin-bottom: 28px;
+
+    max-width: 730px;
 }
 
-.hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  color: var(--creme);
-  opacity: 0.9;
+.hero-content h1 span {
+
+    display: inline-block;
+
+    color: var(--sand);
+
+    font-style: italic;
+}
+
+.hero-content p {
+
+    max-width: 580px;
+
+    margin-bottom: 36px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 1.08rem;
+
+    line-height: 1.8;
 }
 
 .hero-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
 }
 
-.btn {
-  padding: 0.9rem 1.8rem;
-  border-radius: 50px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  border: none;
-  transition: transform 0.2s, background-color 0.2s;
+
+/* BOTÕES */
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    border-radius: 999px;
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
+.button:hover {
+    transform: translateY(-3px);
 }
 
-.btn-primary {
-  background-color: var(--terracota);
-  color: var(--creme);
+.button-primary {
+
+    background: var(--terracotta);
+
+    color: var(--white);
 }
 
-.btn-primary:hover {
-  background-color: #c05a30;
+.button-primary:hover {
+    background: #c45d34;
 }
 
-.btn-whatsapp {
-  background-color: #25D366;
-  color: var(--branco);
+.button-outline {
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    color: var(--white);
+
+    background: rgba(255,255,255,0.04);
 }
 
-.btn-whatsapp:hover {
-  background-color: #20bd5a;
+.button-outline:hover {
+
+    background: var(--white);
+
+    color: var(--green);
 }
 
-/* CARD FLUTUANTE HERO
-   ALTERE AQUI: o bloco de avaliação flutuante à direita da seção principal.
-   Este cartão controla o texto de "5.0", a quantidade de viajantes e o fundo do badge.
-*/
-.hero-card-wrapper {
-  display: flex;
-  justify-content: flex-end;
+.button-dark {
+
+    color: var(--white);
+
+    background: var(--green);
 }
 
-.hero-card {
-  background: rgba(243, 237, 224, 0.95);
-  backdrop-filter: blur(5px);
-  padding: 1.8rem;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  max-width: 280px;
-  border: 1px solid var(--amarelo-areia);
+.button-light {
+
+    color: var(--green);
+
+    background: var(--white);
 }
 
-.hero-card-rating {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--verde-floresta);
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  margin-bottom: 0.5rem;
+.button-whatsapp {
+
+    border: 1px solid rgba(255,255,255,0.45);
+
+    color: var(--white);
 }
 
-.hero-card-text {
-  font-size: 0.95rem;
-  color: var(--preto);
-  margin-bottom: 1rem;
+
+/* HERO IMAGE */
+
+.hero-visual {
+
+    display: flex;
+
+    justify-content: flex-end;
 }
 
-.hero-card-badge {
-  display: inline-block;
-  background-color: var(--amarelo-areia);
-  color: var(--preto);
-  font-weight: 700;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
+.hero-image-wrapper {
+
+    position: relative;
+
+    width: min(100%, 490px);
+
+    height: 590px;
 }
 
-/* GLOBAL SECTIONS */
-section {
-  padding: 5rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.hero-image {
+
+    border-radius:
+        230px
+        230px
+        16px
+        16px;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.28);
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  color: var(--verde-floresta);
-  margin-bottom: 2.5rem;
-  text-transform: uppercase;
-  font-weight: 800;
+.hero-stamp {
+
+    position: absolute;
+
+    right: -35px;
+
+    bottom: 35px;
+
+    width: 145px;
+
+    height: 145px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--sand);
+
+    color: var(--green);
+
+    text-align: center;
+
+    transform: rotate(9deg);
 }
 
-/* CATEGORIAS
-   ALTERE AQUI: o layout da grade de categorias (quantos blocos aparecem por linha e o espaço entre eles).
-   Cada .category-card representa um item de menu visual.
-*/
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+.hero-stamp span {
+
+    font-size: 0.55rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
 }
 
-.category-card {
-  background-color: var(--verde-floresta);
-  color: var(--creme);
-  padding: 2.5rem 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-  border: 2px solid transparent;
+.hero-stamp strong {
+
+    margin: 4px 0;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 1.05rem;
 }
 
-.category-card:hover {
-  background-color: var(--terracota);
-  transform: translateY(-5px);
+.hero-stamp small {
+
+    font-size: 0.5rem;
+
+    letter-spacing: 0.12em;
 }
 
-.category-icon {
-  font-size: 2rem;
+
+/* HERO BOTTOM */
+
+.hero-bottom {
+
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    border-top:
+        1px solid rgba(255,255,255,0.2);
 }
 
-/* TOURS / PASSEIOS
-   ALTERE AQUI: o grid dos cards de passeio e todos os estilos internos do cartão.
-   Os títulos, preços, ícones, avaliação, destaque e botão estão aqui.
-*/
-.tours-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.hero-bottom-inner {
+
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+.dot {
+
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--sand);
+}
+
+
+/* ============================================================
+   SECTION HEADING
+============================================================ */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+
+    max-width: 650px;
+}
+
+.section-heading > p {
+
+    max-width: 390px;
+
+    color: var(--gray);
+}
+
+.text-link {
+
+    white-space: nowrap;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    color: var(--green);
+}
+
+
+/* ============================================================
+   PASSEIOS
+============================================================ */
+
+.tours {
+
+    background: var(--cream);
+}
+
+.tour-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 24px;
 }
 
 .tour-card {
-  background-color: var(--branco);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  position: relative;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-medium);
+
+    background: var(--white);
+
+    box-shadow:
+        0 5px 30px rgba(21,21,21,0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.tour-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px rgba(21,21,21,0.12);
+}
+
+.tour-card-featured {
+
+    grid-column: span 2;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr;
 }
 
 .tour-image {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+
+    position: relative;
+
+    display: block;
+
+    height: 330px;
+
+    overflow: hidden;
 }
 
-.tour-badge {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: var(--terracota);
-  color: var(--creme);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
+.tour-card-featured .tour-image {
+    height: 100%;
+}
+
+.tour-image img {
+
+    transition:
+        transform 0.5s ease;
+}
+
+.tour-card:hover
+.tour-image img {
+
+    transform: scale(1.05);
+}
+
+.tour-category {
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 18px;
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: var(--white);
+
+    color: var(--green);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
 }
 
 .tour-content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+
+    padding: 30px;
 }
 
-.tour-title {
-  font-size: 1.3rem;
-  color: var(--verde-floresta);
-  margin-bottom: 0.5rem;
-  font-weight: 800;
+.tour-meta {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
 }
 
-.tour-rating {
-  color: var(--terracota);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+.tour-meta span {
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    color: var(--terracotta);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
 }
 
-.tour-details {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 1.5rem;
+.tour-content h3 {
+
+    margin-bottom: 14px;
+
+    font-size: 1.65rem;
+
+    color: var(--green);
 }
 
-.tour-price-wrapper {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+.tour-content p {
+
+    min-height: 80px;
+
+    margin-bottom: 25px;
+
+    color: var(--gray);
+
+    font-size: 0.88rem;
 }
 
-.tour-price-label {
-  font-size: 0.75rem;
-  color: #777;
+.tour-footer {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--line);
 }
 
-.tour-price {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--verde-floresta);
+.tour-price small {
+
+    display: block;
+
+    color: var(--gray);
+
+    font-size: 0.67rem;
 }
 
-/* MONTE SUA EXPERIÊNCIA
-   ALTERE AQUI: a caixa interativa que muda de acordo com o tempo de viagem.
-   O estilo dos botões e do bloco de resultado estão neste bloco.
-*/
-.planner-section {
-  background-color: var(--verde-floresta);
-  color: var(--creme);
-  border-radius: 24px;
-  padding: 3rem 2rem;
-  text-align: center;
-  margin-top: 2rem;
+.tour-price strong {
+
+    display: block;
+
+    color: var(--green);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 1.5rem;
 }
 
-.planner-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--creme);
+.tour-link {
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    color: var(--terracotta);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
 }
 
-.planner-options {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
+
+/* ============================================================
+   WHY
+============================================================ */
+
+.why-section {
+
+    background: var(--cream-light);
 }
 
-.planner-btn {
-  background: transparent;
-  border: 2px solid var(--amarelo-areia);
-  color: var(--creme);
-  padding: 0.6rem 1.5rem;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: all 0.2s;
+.why-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        1fr;
+
+    gap: 100px;
+
+    align-items: center;
 }
 
-.planner-btn.active, .planner-btn:hover {
-  background-color: var(--amarelo-areia);
-  color: var(--preto);
+.why-image {
+
+    position: relative;
+
+    height: 620px;
 }
 
-.planner-result {
-  background-color: rgba(255,255,255,0.05);
-  padding: 1.5rem;
-  border-radius: 12px;
-  max-width: 500px;
-  margin: 0 auto;
-  border: 1px dashed var(--amarelo-areia);
-  font-size: 1.1rem;
+.why-image img {
+
+    border-radius:
+        18px
+        18px
+        150px
+        18px;
 }
 
-/* GUIA DE TIRADENTES
-   ALTERE AQUI: as opções de guia/FAQ/links rápidos.
-   Cada .guide-card é um item da grade.
-*/
-.guide-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.2rem;
+.image-label {
+
+    position: absolute;
+
+    right: -40px;
+
+    bottom: 35px;
+
+    padding: 20px 28px;
+
+    background: var(--terracotta);
+
+    color: var(--white);
 }
 
-.guide-card {
-  background-color: var(--branco);
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  text-decoration: none;
-  color: var(--verde-floresta);
-  font-weight: 700;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-  border: 1px solid rgba(0,0,0,0.05);
-  transition: transform 0.2s;
+.image-label span {
+
+    display: block;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.15em;
 }
 
-.guide-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+.image-label strong {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 1.2rem;
 }
 
-/* FULL WIDTH CTA
-   ALTERE AQUI: o bloco grande de chamada para ação, com imagem de fundo e texto principal.
-   É a seção que costuma anunciar a última decisão do visitante.
-*/
-.full-cta {
-  background: linear-gradient(rgba(30, 58, 47, 0.7), rgba(30, 58, 47, 0.7)), 
-              url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  padding: 8rem 2rem;
-  text-align: center;
-  color: var(--creme);
+.why-content h2 {
+
+    margin-bottom: 28px;
 }
 
-.full-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  font-weight: 800;
+.why-content > p {
+
+    max-width: 580px;
+
+    margin-bottom: 18px;
+
+    color: var(--gray);
 }
 
-/* FOOTER
-   ALTERE AQUI: o rodapé do site, como fundo escuro, texto final e ano.
-*/
-footer {
-  background-color: var(--preto);
-  color: var(--creme);
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.8;
+.benefits {
+
+    margin-top: 40px;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-  }
-  .hero-card-wrapper {
+.benefit {
+
+    display: flex;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-top: 1px solid var(--line);
+}
+
+.benefit-icon {
+
+    flex-shrink: 0;
+
+    color: var(--terracotta);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+}
+
+.benefit h3 {
+
+    margin-bottom: 4px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+}
+
+.benefit p {
+
+    color: var(--gray);
+
+    font-size: 0.8rem;
+}
+
+
+/* ============================================================
+   ESCOLHA UM PASSEIO
+============================================================ */
+
+.picks {
+
+    background: var(--cream-light);
+}
+
+.picks-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1px;
+
+    background: var(--line);
+
+    border: 1px solid var(--line);
+}
+
+.pick-card {
+
+    position: relative;
+
+    display: block;
+
+    min-height: 300px;
+
+    padding: 30px;
+
+    background: var(--cream-light);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.pick-card:hover {
+
+    background: var(--green);
+
+    color: var(--white);
+}
+
+.pick-number {
+
+    display: block;
+
+    margin-bottom: 70px;
+
+    color: var(--terracotta);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+}
+
+.pick-card h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 1.45rem;
+}
+
+.pick-card p {
+
+    color: var(--gray);
+
+    font-size: 0.82rem;
+}
+
+.pick-card:hover p {
+    color: rgba(255,255,255,0.7);
+}
+
+.pick-arrow {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    font-size: 1.4rem;
+}
+
+
+/* ============================================================
+   GALERIA
+============================================================ */
+
+.gallery {
+
+    background: var(--cream);
+}
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        0.8fr
+        0.8fr;
+
+    grid-template-rows:
+        260px
+        260px;
+
+    gap: 15px;
+}
+
+.gallery-item {
+
+    overflow: hidden;
+
+    border-radius: var(--radius-small);
+}
+
+.gallery-item img {
+
+    transition:
+        transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-large {
+
+    grid-row: span 2;
+}
+
+
+/* ============================================================
+   DEPOIMENTOS
+============================================================ */
+
+.testimonials {
+
+    background: var(--cream-light);
+}
+
+.testimonial-notice {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 40px;
+
+    border:
+        1px dashed
+        rgba(30,58,47,0.3);
+
+    border-radius: var(--radius-medium);
+
+    background: rgba(216,180,106,0.12);
+}
+
+.testimonial-notice > span {
+
+    font-size: 3rem;
+
+    color: var(--sand);
+}
+
+.testimonial-notice strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 1.5rem;
+
+    color: var(--green);
+}
+
+.testimonial-notice p {
+
+    color: var(--gray);
+
+    font-size: 0.88rem;
+}
+
+
+/* ============================================================
+   CTA FINAL
+============================================================ */
+
+.final-cta {
+
+    padding: 130px 0;
+
+    background: var(--terracotta);
+
+    color: var(--white);
+
+    text-align: center;
+}
+
+.final-cta-content {
+
+    max-width: 850px;
+
+    margin-inline: auto;
+}
+
+.final-cta .eyebrow {
+    color: var(--sand);
+}
+
+.final-cta h2 {
+
+    margin-bottom: 25px;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+}
+
+.final-cta h2 em {
+    color: var(--cream);
+}
+
+.final-cta p {
+
+    max-width: 500px;
+
+    margin:
+        0 auto
+        35px;
+
+    color: rgba(255,255,255,0.82);
+}
+
+.final-buttons {
+
+    display: flex;
+
     justify-content: center;
-  }
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  .nav-links {
-    display: none;
-  }
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* ============================================================
+   INSTAGRAM CTA
+============================================================ */
+
+.instagram-cta {
+
+    padding: 70px 0;
+
+    background: var(--sand);
+
+    text-align: center;
+}
+
+.instagram-cta .container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+.instagram-cta p {
+
+    max-width: 480px;
+
+    color: var(--green-dark);
+
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.footer {
+
+    padding-top: 80px;
+
+    background: var(--green-dark);
+
+    color: var(--white);
+}
+
+.footer-top {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        0.8fr
+        0.8fr
+        1fr
+        1fr;
+
+    gap: 40px;
+
+    padding-bottom: 70px;
+}
+
+.footer-brand p {
+
+    max-width: 300px;
+
+    margin-top: 20px;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 0.85rem;
+}
+
+.footer-logo {
+
+    display: inline-flex;
+
+    flex-direction: column;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    line-height: 0.8;
+}
+
+.footer-logo small {
+
+    margin-top: 9px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+}
+
+.footer-instagram {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: var(--sand);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.newsletter-form {
+
+    display: flex;
+
+    gap: 8px;
+}
+
+.newsletter-form input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: var(--radius-small);
+
+    background: rgba(255,255,255,0.06);
+
+    color: var(--white);
+
+    font-size: 0.8rem;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255,255,255,0.45);
+}
+
+.newsletter-form button {
+
+    padding: 12px 16px;
+
+    border: 0;
+
+    border-radius: var(--radius-small);
+
+    background: var(--terracotta);
+
+    color: var(--white);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    background: #c45d34;
+}
+
+.newsletter-feedback {
+
+    margin-top: 10px;
+
+    min-height: 16px;
+
+    color: var(--sand);
+
+    font-size: 0.75rem;
+}
+
+.footer-column h3 {
+
+    margin-bottom: 10px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    color: var(--sand);
+}
+
+.footer-column a {
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 0.8rem;
+
+    transition:
+        color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: var(--white);
+}
+
+.footer-contact a {
+
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 75px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 0.7rem;
+}
+
+
+/* ============================================================
+   WHATSAPP FLUTUANTE
+============================================================ */
+
+.whatsapp-float {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 90;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px 12px 18px;
+
+    border-radius: 999px;
+
+    background: var(--green);
+
+    color: var(--white);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.22);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px);
+}
+
+.whatsapp-float strong {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--terracotta);
+}
+
+
+/* ============================================================
+   RESPONSIVO — TABLET
+============================================================ */
+
+@media (max-width: 1000px) {
+
+    .main-nav {
+        gap: 18px;
+    }
+
+    .hero-grid {
+
+        grid-template-columns:
+            1fr
+            0.8fr;
+
+        gap: 40px;
+    }
+
+    .why-grid {
+
+        gap: 50px;
+    }
+
+    .picks-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .footer-top {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVO — MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+    .container {
+
+        width:
+            min(
+                calc(100% - 32px),
+                var(--container)
+            );
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+
+    /* TOPBAR */
+
+    .topbar-account {
+        display: none;
+    }
+
+    .topbar-inner {
+        justify-content: flex-end;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+        top: 34px;
+    }
+
+    .header-inner {
+        min-height: 80px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .logo {
+        min-width: 150px;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height: auto;
+
+        padding:
+            120px 0
+            90px;
+    }
+
+    .hero-grid {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 50px;
+    }
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(
+                3.2rem,
+                15vw,
+                5rem
+            );
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .hero-visual {
+
+        justify-content: center;
+    }
+
+    .hero-image-wrapper {
+
+        width: 85vw;
+
+        height: 440px;
+    }
+
+    .hero-stamp {
+
+        right: -15px;
+
+        width: 110px;
+
+        height: 110px;
+    }
+
+    .hero-bottom {
+        display: none;
+    }
+
+
+    /* HEADING */
+
+    .section-heading {
+
+        display: block;
+
+        margin-bottom: 40px;
+    }
+
+    .section-heading > p {
+
+        margin-top: 20px;
+    }
+
+
+    /* TOURS */
+
+    .tour-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .tour-card-featured {
+
+        grid-column: auto;
+
+        display: block;
+    }
+
+    .tour-card-featured .tour-image {
+        height: 330px;
+    }
+
+
+    /* WHY */
+
+    .why-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .why-image {
+
+        height: 450px;
+    }
+
+    .image-label {
+        right: 15px;
+    }
+
+
+    /* ESCOLHA UM PASSEIO */
+
+    .picks-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    /* INSTAGRAM CTA */
+
+    .instagram-cta .container {
+
+        flex-direction: column;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-grid {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        grid-template-rows:
+            200px
+            200px
+            200px;
+    }
+
+    .gallery-large {
+
+        grid-row: span 2;
+    }
+
+
+    /* TESTIMONIAL */
+
+    .testimonial-notice {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    /* CTA */
+
+    .final-cta {
+        padding: 90px 0;
+    }
+
+
+    /* FOOTER */
+
+    .footer-top {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .newsletter-form {
+        max-width: 340px;
+    }
+
+    .footer-bottom {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 7px;
+
+        padding: 20px 0;
+    }
+
+    .whatsapp-float span {
+        display: none;
+    }
+
+    .whatsapp-float {
+
+        width: 52px;
+
+        height: 52px;
+
+        padding: 0;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE PEQUENO
+============================================================ */
+
+@media (max-width: 430px) {
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .tour-content {
+        padding: 23px;
+    }
+
+    .gallery-grid {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            repeat(4, 240px);
+    }
+
+    .gallery-large {
+        grid-row: auto;
+    }
+
+}
+/* ============================================================
+   PLACEHOLDER PARA IMAGENS AINDA NÃO RECEBIDAS
+============================================================ */
+
+.image-placeholder {
+
+    background:
+        linear-gradient(
+            135deg,
+            #315443,
+            #1e3a2f
+        );
+
+    position: relative;
+
+}
+
+.image-placeholder::after {
+
+    content:
+        "Imagem provisória";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
 }
